@@ -1,20 +1,215 @@
 .home-container {
-  max-width: 1000px;
+  max-width: 1200px;
   margin: 0 auto;
+  padding: 20px;
 }
 
 .hero-section {
-  text-align: center;
+  background: linear-gradient(135deg, var(--secondary-color) 0%, var(--primary-color) 100%);
+  border-radius: 20px;
+  padding: 60px 40px;
   margin-bottom: 40px;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  color: var(--white-color);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+.hero-content {
+  flex: 1;
 }
 
 .hero-title {
-  color: #333;
-  font-size: 2rem;
-  margin-bottom: 10px;
+  font-size: 3rem;
+  font-weight: 700;
+  margin: 0 0 15px 0;
+  line-height: 1.2;
 }
 
 .hero-subtitle {
-  color: #666;
+  font-size: 1.5rem;
+  margin: 0 0 10px 0;
+  opacity: 0.95;
+}
+
+.hero-description {
   font-size: 1.1rem;
+  margin: 0 0 30px 0;
+  opacity: 0.9;
+  line-height: 1.6;
+}
+
+.hero-features {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.95rem;
+}
+
+.feature-item mat-icon {
+  font-size: 24px;
+  height: 24px;
+  width: 24px;
+  line-height: 24px;
+}
+
+.hero-visual {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-brands {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.brand-card {
+  padding: 20px 30px;
+  border-radius: 12px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: white;
+  transition: transform 0.3s;
+}
+
+.brand-card:hover {
+  transform: scale(1.05);
+}
+
+.brand-card.visa {
+  background: linear-gradient(135deg, var(--visa-color) 0%, #0d47a1 100%);
+}
+
+.brand-card.mastercard {
+  background: linear-gradient(135deg, var(--mastercard-color) 0%, #f57f17 100%);
+}
+
+.brand-card.amex {
+  background: linear-gradient(135deg, var(--amex-color) 0%, #004ba0 100%);
+}
+
+.brand-card.discover {
+  background: linear-gradient(135deg, var(--discover-color) 0%, #ff9100 100%);
+}
+
+.brand-card.elo {
+  background: linear-gradient(135deg, var(--elo-color) 0%, #ff8533 100%);
+}
+
+.brand-card.hipercard {
+  background: linear-gradient(135deg, var(--hipercard-color) 0%, #d32f2f 100%);
+}
+
+.search-section {
+  margin-bottom: 40px;
+}
+
+.quick-actions {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.action-card {
+  background: white;
+  border-radius: 12px;
+  padding: 30px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.action-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.action-card mat-icon {
+  font-size: 48px;
+  height: 48px;
+  width: 48px;
+  color: #333333;
+  margin-bottom: 15px;
+}
+
+.action-card h3 {
+  margin: 0 0 10px 0;
+  color: #333;
+  font-size: 1.3rem;
+}
+
+.action-card p {
+  margin: 0;
+  color: #666;
+  font-size: 0.95rem;
+}
+
+.dark-mode .action-card {
+  background: #2d2d2d;
+  color: #ffffff;
+}
+
+.dark-mode .action-card mat-icon {
+  color: #ffffff;
+}
+
+.dark-mode .action-card h3 {
+  color: #ffffff;
+}
+
+.dark-mode .action-card p {
+  color: #cccccc;
+}
+
+.dark-mode .hero-section {
+  background: linear-gradient(135deg, #4a5568 0%, #2d3748 100%);
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    flex-direction: column;
+    padding: 40px 20px;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.2rem;
+  }
+
+  .hero-features {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .card-brands {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .brand-card {
+    padding: 15px 20px;
+    font-size: 1rem;
+  }
+
+  .quick-actions {
+    grid-template-columns: 1fr;
+  }
 }

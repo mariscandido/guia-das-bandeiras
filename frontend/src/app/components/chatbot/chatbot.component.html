@@ -1,0 +1,54 @@
+<div class="chatbot-container">
+  <button 
+    *ngIf="!isOpen" 
+    mat-fab 
+    class="chatbot-button"
+    (click)="toggleChat()"
+    [attr.aria-label]="'Open chatbot'">
+    <mat-icon>chat</mat-icon>
+  </button>
+
+  <div *ngIf="isOpen" class="chatbot-window" [@fadeIn]>
+    <div class="chatbot-header">
+      <div class="header-content">
+        <mat-icon>smart_toy</mat-icon>
+        <h3>Assistente Virtual</h3>
+      </div>
+      <button mat-icon-button (click)="toggleChat()">
+        <mat-icon>close</mat-icon>
+      </button>
+    </div>
+
+    <div class="chatbot-messages">
+      <div *ngFor="let message of messages" 
+           class="message"
+           [class.user]="message.isUser"
+           [class.bot]="!message.isUser">
+        <div class="message-content">
+          <p>{{ message.text }}</p>
+          <span class="message-time">{{ message.timestamp | date:'short' }}</span>
+        </div>
+      </div>
+
+      <div *ngIf="isTyping" class="message bot typing">
+        <div class="typing-indicator">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="chatbot-input">
+      <mat-form-field appearance="fill" class="input-field">
+        <input matInput 
+               [(ngModel)]="userInput" 
+               (keyup.enter)="sendMessage()"
+               placeholder="Digite sua dúvida...">
+        <button mat-icon-button matSuffix (click)="sendMessage()" [disabled]="!userInput.trim()">
+          <mat-icon>send</mat-icon>
+        </button>
+      </mat-form-field>
+    </div>
+  </div>
+</div>

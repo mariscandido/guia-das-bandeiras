@@ -1,0 +1,4 @@
+<button mat-icon-button (click)="toggleTheme()" [attr.aria-label]="'Toggle theme'">
+  <mat-icon *ngIf="!(isDarkMode$ | async)">brightness_7</mat-icon>
+  <mat-icon *ngIf="isDarkMode$ | async">brightness_2</mat-icon>
+</button>

@@ -45,11 +45,28 @@
 }
 
 .category-title {
-  color: #667eea;
+  color: #1a1a1a;
   margin-bottom: 20px;
   font-size: 1.5rem;
-  border-bottom: 2px solid #667eea;
+  border-bottom: 2px solid #1a1a1a;
   padding-bottom: 10px;
+}
+
+.dark-mode .category-title {
+  color: #ffffff;
+  border-bottom-color: #555555;
+}
+
+.dark-mode .faq-title {
+  color: #ffffff;
+}
+
+.dark-mode .faq-subtitle {
+  color: #cccccc;
+}
+
+.dark-mode .faq-answer {
+  color: #cccccc;
 }
 
 .faq-accordion {

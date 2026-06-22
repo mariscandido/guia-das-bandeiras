@@ -11,21 +11,22 @@
 }
 
 .loading-container p {
-  color: #666;
+  color: var(--text-secondary);
   font-size: 1.1rem;
 }
 
 .no-results {
   text-align: center;
   padding: 60px 20px;
-  color: #666;
+  color: var(--text-secondary);
 }
 
 .no-results mat-icon {
   font-size: 64px;
   height: 64px;
   width: 64px;
-  color: #ccc;
+  line-height: 64px;
+  color: var(--accent-color);
   margin-bottom: 20px;
 }
 
@@ -36,7 +37,7 @@
 
 .no-results .hint {
   font-size: 0.9rem;
-  color: #999;
+  color: var(--accent-color);
 }
 
 .results-header {
@@ -44,7 +45,7 @@
 }
 
 .results-header h2 {
-  color: #333;
+  color: var(--text-color);
   font-size: 1.5rem;
 }
 
@@ -55,12 +56,13 @@
 }
 
 .result-card {
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition: transform 0.3s, box-shadow 0.3s;
+  animation: fadeIn 0.4s ease-in-out;
 }
 
 .result-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
 }
 
 .brand-badge {
@@ -74,13 +76,13 @@
 }
 
 .section {
-  color: #666;
+  color: var(--text-secondary);
   font-size: 0.9rem;
 }
 
 .excerpt {
   line-height: 1.6;
-  color: #444;
+  color: var(--text-color);
 }
 
 @media (max-width: 768px) {

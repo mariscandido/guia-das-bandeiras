@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { PdfService } from '../services/pdf.service';
 
 export interface SearchResult {
   cardBrand: string;
@@ -17,6 +18,14 @@ export class ResultsListComponent {
   @Input() results: SearchResult[] = [];
   @Input() loading: boolean = false;
   @Input() query: string = '';
+
+  constructor(private pdfService: PdfService) {}
+
+  exportToPDF(): void {
+    if (this.results.length > 0) {
+      this.pdfService.generateSearchResultsPDF(this.query, this.results);
+    }
+  }
 
   getBrandColor(brand: string): string {
     const brandLower = brand.toLowerCase();

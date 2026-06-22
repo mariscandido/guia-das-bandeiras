@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 import { ResultsListComponent, SearchResult } from '../results-list/results-list.component';
 
@@ -13,7 +14,7 @@ export class HomeComponent {
   loading: boolean = false;
   query: string = '';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private router: Router) {}
 
   onSearch(query: string) {
     this.query = query;
@@ -30,5 +31,17 @@ export class HomeComponent {
         this.loading = false;
       }
     });
+  }
+
+  navigateToGlossary() {
+    this.router.navigate(['/glossary']);
+  }
+
+  navigateToDashboard() {
+    this.router.navigate(['/dashboard']);
+  }
+
+  navigateToTraining() {
+    this.router.navigate(['/training']);
   }
 }

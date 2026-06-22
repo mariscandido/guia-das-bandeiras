@@ -1,10 +1,60 @@
 <div class="home-container">
   <div class="hero-section">
-    <h2 class="hero-title">Centralize suas pesquisas sobre cartões</h2>
-    <p class="hero-subtitle">Encontre informações oficiais de Visa, MasterCard e American Express em um só lugar</p>
+    <div class="hero-content">
+      <h1 class="hero-title">Guia das Bandeiras</h1>
+      <p class="hero-subtitle">Centralize suas pesquisas sobre cartões</p>
+      <p class="hero-description">Encontre informações oficiais de Visa, MasterCard e American Express em um só lugar</p>
+      <div class="hero-features">
+        <div class="feature-item">
+          <mat-icon>search</mat-icon>
+          <span>Busca Unificada</span>
+        </div>
+        <div class="feature-item">
+          <mat-icon>menu_book</mat-icon>
+          <span>Manuais Oficiais</span>
+        </div>
+        <div class="feature-item">
+          <mat-icon>school</mat-icon>
+          <span>Treinamento</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="card-brands">
+        <div class="brand-card visa">
+          <span>VISA</span>
+        </div>
+        <div class="brand-card mastercard">
+          <span>MasterCard</span>
+        </div>
+        <div class="brand-card amex">
+          <span>AMEX</span>
+        </div>
+      </div>
+    </div>
   </div>
 
-  <app-search-bar (search)="onSearch($event)"></app-search-bar>
+  <div class="search-section">
+    <app-search-bar (search)="onSearch($event)"></app-search-bar>
+  </div>
+
+  <div class="quick-actions">
+    <div class="action-card" (click)="navigateToGlossary()">
+      <mat-icon>menu_book</mat-icon>
+      <h3>Glossário</h3>
+      <p>Termos técnicos explicados</p>
+    </div>
+    <div class="action-card" (click)="navigateToDashboard()">
+      <mat-icon>analytics</mat-icon>
+      <h3>Dashboard</h3>
+      <p>Estatísticas de uso</p>
+    </div>
+    <div class="action-card" (click)="navigateToTraining()">
+      <mat-icon>school</mat-icon>
+      <h3>Treinamento</h3>
+      <p>Quizzes e flashcards</p>
+    </div>
+  </div>
 
   <app-results-list 
     [results]="results" 

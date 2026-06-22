@@ -5,7 +5,15 @@
       <nav class="nav">
         <button mat-button (click)="navigateToHome()">Buscar</button>
         <button mat-button (click)="navigateToFaq()">FAQ</button>
+        <button mat-button (click)="navigateToGlossary()">Glossário</button>
+        <button mat-button (click)="navigateToDashboard()">Dashboard</button>
+        <button mat-button (click)="navigateToTraining()">Treinamento</button>
+        <button mat-button (click)="navigateToAbout()">Sobre</button>
       </nav>
+      <div class="header-actions">
+        <app-theme-toggle></app-theme-toggle>
+        <app-notification-panel></app-notification-panel>
+      </div>
     </div>
   </header>
 
@@ -20,6 +28,6 @@
       <p>&copy; 2024 Guia das Bandeiras. Centralização de informações dos manuais oficiais.</p>
     </div>
   </footer>
-</div>
 
-<ng-content></ng-content>
+  <app-chatbot></app-chatbot>
+</div>

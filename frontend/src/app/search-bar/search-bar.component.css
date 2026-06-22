@@ -16,7 +16,7 @@
 
 .search-hint {
   text-align: center;
-  color: #666;
+  color: var(--text-secondary);
   margin-top: 10px;
   font-size: 0.9rem;
 }

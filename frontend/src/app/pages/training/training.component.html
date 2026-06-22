@@ -1,0 +1,109 @@
+<div class="training-container">
+  <div class="training-header">
+    <h1>Área de Treinamento</h1>
+    <p>Aprenda e teste seus conhecimentos sobre processamento de cartões</p>
+  </div>
+
+  <mat-tab-group [(selectedIndex)]="activeTab" class="training-tabs">
+    <mat-tab label="Quizzes">
+      <div class="quiz-container">
+        <div *ngIf="!quizCompleted" class="quiz-content">
+          <div class="quiz-progress">
+            <p>Pergunta {{ currentQuestionIndex + 1 }} de {{ quizzes.length }}</p>
+            <div class="progress-bar">
+              <div class="progress-fill" [style.width.%]="((currentQuestionIndex + 1) / quizzes.length) * 100"></div>
+            </div>
+          </div>
+
+          <mat-card class="question-card">
+            <mat-card-content>
+              <h2>{{ currentQuestion.question }}</h2>
+              <div class="options-list">
+                <button 
+                  *ngFor="let option of currentQuestion.options; let i = index"
+                  mat-raised-button
+                  class="option-button"
+                  [class.correct]="showExplanation && i === currentQuestion.correctAnswer"
+                  [class.incorrect]="showExplanation && selectedAnswer === i && i !== currentQuestion.correctAnswer"
+                  [class.selected]="selectedAnswer === i && !showExplanation"
+                  (click)="selectAnswer(i)"
+                  [disabled]="showExplanation">
+                  {{ option }}
+                </button>
+              </div>
+
+              <div *ngIf="showExplanation" class="explanation">
+                <div [class.correct-explanation]="selectedAnswer === currentQuestion.correctAnswer"
+                     [class.incorrect-explanation]="selectedAnswer !== currentQuestion.correctAnswer">
+                  <mat-icon>{{ selectedAnswer === currentQuestion.correctAnswer ? 'check_circle' : 'cancel' }}</mat-icon>
+                  <span>{{ selectedAnswer === currentQuestion.correctAnswer ? 'Correto!' : 'Incorreto!' }}</span>
+                </div>
+                <p>{{ currentQuestion.explanation }}</p>
+                <button mat-raised-button color="primary" (click)="nextQuestion()">
+                  {{ currentQuestionIndex < quizzes.length - 1 ? 'Próxima Pergunta' : 'Ver Resultado' }}
+                </button>
+              </div>
+            </mat-card-content>
+          </mat-card>
+        </div>
+
+        <div *ngIf="quizCompleted" class="quiz-result">
+          <mat-card class="result-card">
+            <mat-card-content>
+              <div class="result-icon">
+                <mat-icon>emoji_events</mat-icon>
+              </div>
+              <h2>Quiz Completo!</h2>
+              <p class="score">Sua pontuação: {{ score }}/{{ quizzes.length }}</p>
+              <p class="percentage">{{ getPercentage() }}%</p>
+              <div class="result-actions">
+                <button mat-raised-button color="primary" (click)="resetQuiz()">Tentar Novamente</button>
+              </div>
+            </mat-card-content>
+          </mat-card>
+        </div>
+      </div>
+    </mat-tab>
+
+    <mat-tab label="Flashcards">
+      <div class="flashcards-container">
+        <div class="flashcard-controls">
+          <button mat-button (click)="previousFlashcard()" [disabled]="currentFlashcardIndex === 0">
+            <mat-icon>chevron_left</mat-icon>
+            Anterior
+          </button>
+          <span class="card-counter">{{ currentFlashcardIndex + 1 }} / {{ flashcards.length }}</span>
+          <button mat-button (click)="nextFlashcard()" [disabled]="currentFlashcardIndex === flashcards.length - 1">
+            Próximo
+            <mat-icon>chevron_right</mat-icon>
+          </button>
+          <button mat-button (click)="shuffleFlashcards()">
+            <mat-icon>shuffle</mat-icon>
+            Embaralhar
+          </button>
+        </div>
+
+        <div class="flashcard-scene">
+          <div class="flashcard" [class.flipped]="isFlipped" (click)="flipCard()">
+            <div class="flashcard-face front">
+              <div class="flashcard-category">{{ currentFlashcard.category }}</div>
+              <h3>{{ currentFlashcard.front }}</h3>
+              <p class="hint">Clique para ver a resposta</p>
+            </div>
+            <div class="flashcard-face back">
+              <div class="flashcard-category">{{ currentFlashcard.category }}</div>
+              <h3>{{ currentFlashcard.front }}</h3>
+              <p>{{ currentFlashcard.back }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </mat-tab>
+
+    <mat-tab label="Ranking">
+      <div class="leaderboard-container">
+        <app-leaderboard></app-leaderboard>
+      </div>
+    </mat-tab>
+  </mat-tab-group>
+</div>

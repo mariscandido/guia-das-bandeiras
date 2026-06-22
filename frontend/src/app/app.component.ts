@@ -9,11 +9,27 @@ import { Router } from '@angular/router';
 export class AppComponent {
   constructor(private router: Router) {}
 
+  navigateToHome() {
+    this.router.navigate(['/home']);
+  }
+
   navigateToFaq() {
     this.router.navigate(['/faq']);
   }
 
-  navigateToHome() {
-    this.router.navigate(['/home']);
+  navigateToGlossary() {
+    this.router.navigate(['/glossary']);
+  }
+
+  navigateToDashboard() {
+    this.router.navigate(['/dashboard']);
+  }
+
+  navigateToTraining() {
+    this.router.navigate(['/training']);
+  }
+
+  navigateToAbout() {
+    this.router.navigate(['/about']);
   }
 }

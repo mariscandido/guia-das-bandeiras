@@ -1,0 +1,49 @@
+<div class="glossary-container">
+  <div class="glossary-header">
+    <h1>Glossário</h1>
+    <p>Termos técnicos do mundo dos cartões</p>
+  </div>
+
+  <div class="search-section">
+    <mat-form-field appearance="fill" class="search-field">
+      <mat-label>Buscar termo...</mat-label>
+      <input matInput [(ngModel)]="searchTerm" (ngModelChange)="onSearchChange()" placeholder="Digite para buscar">
+      <mat-icon matSuffix>search</mat-icon>
+    </mat-form-field>
+  </div>
+
+  <div class="letters-filter">
+    <button 
+      *ngFor="let letter of letters" 
+      mat-button 
+      [class.active]="selectedLetter === letter"
+      (click)="onLetterChange(letter)">
+      {{ letter === 'all' ? 'Todos' : letter }}
+    </button>
+  </div>
+
+  <div class="glossary-content">
+    <div *ngIf="filteredTerms.length === 0" class="no-results">
+      <mat-icon>search_off</mat-icon>
+      <p>Nenhum termo encontrado</p>
+    </div>
+
+    <div *ngFor="let category of getCategories()" class="category-section">
+      <h2 class="category-title">{{ category }}</h2>
+      <mat-card *ngFor="let term of getTermsByCategory(category)" class="term-card">
+        <mat-card-header>
+          <mat-card-title-group>
+            <mat-card-title>{{ term.term }}</mat-card-title>
+          </mat-card-title-group>
+        </mat-card-header>
+        <mat-card-content>
+          <p class="term-definition">{{ term.definition }}</p>
+          <div *ngIf="term.relatedTerms" class="related-terms">
+            <span class="related-label">Termos relacionados:</span>
+            <span *ngFor="let related of term.relatedTerms" class="related-term">{{ related }}</span>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>

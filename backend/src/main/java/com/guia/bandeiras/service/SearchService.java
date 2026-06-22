@@ -62,6 +62,9 @@ public class SearchService {
         results.addAll(searchVisaManual(query, cardBrandFilter));
         results.addAll(searchMastercardManual(query, cardBrandFilter));
         results.addAll(searchAmexManual(query, cardBrandFilter));
+        results.addAll(searchEloManual(query, cardBrandFilter));
+        results.addAll(searchHipercardManual(query, cardBrandFilter));
+        results.addAll(searchDiscoverManual(query, cardBrandFilter));
         
         SearchResponse response = new SearchResponse();
         response.setQuery(request.getQuery());
@@ -186,6 +189,126 @@ public class SearchService {
                 "Fraud Prevention",
                 "American Express utiliza modelos avançados de detecção de fraude com machine learning. Estabelecimentos devem utilizar AVS e CVV para reduzir fraudes.",
                 "https://www.americanexpress.com/merchant",
+                "Security"
+            ));
+        }
+        
+        return results;
+    }
+
+    private List<SearchResponse.SearchResult> searchEloManual(String query, String cardBrandFilter) {
+        if (cardBrandFilter != null && !cardBrandFilter.equalsIgnoreCase("elo")) {
+            return new ArrayList<>();
+        }
+        
+        List<SearchResponse.SearchResult> results = new ArrayList<>();
+        
+        if (query.contains("chargeback")) {
+            results.add(new SearchResponse.SearchResult(
+                "Elo",
+                "Processo de Disputa Elo",
+                "Elo possui um processo de disputa simplificado para o mercado brasileiro. O prazo padrão é de 120 dias, podendo ser estendido para 180 dias em casos específicos.",
+                "https://www.elo.com.br/merchant",
+                "Disputas"
+            ));
+        }
+        
+        if (query.contains("mcc")) {
+            results.add(new SearchResponse.SearchResult(
+                "Elo",
+                "Classificação MCC Elo",
+                "Elo segue os padrões internacionais de MCC, mas possui categorias específicas para o mercado brasileiro. Exemplos: 5499 - Miscelânea de alimentos, 7011 - Hotéis.",
+                "https://www.elo.com.br/merchant",
+                "Classification"
+            ));
+        }
+        
+        if (query.contains("autoriza")) {
+            results.add(new SearchResponse.SearchResult(
+                "Elo",
+                "Autorização Elo",
+                "Elo utiliza uma rede de autorização própria integrada com Visa e MasterCard. O tempo médio de resposta é inferior a 2 segundos para transações nacionais.",
+                "https://www.elo.com.br/merchant",
+                "Processing"
+            ));
+        }
+        
+        return results;
+    }
+
+    private List<SearchResponse.SearchResult> searchHipercardManual(String query, String cardBrandFilter) {
+        if (cardBrandFilter != null && !cardBrandFilter.equalsIgnoreCase("hipercard")) {
+            return new ArrayList<>();
+        }
+        
+        List<SearchResponse.SearchResult> results = new ArrayList<>();
+        
+        if (query.contains("chargeback")) {
+            results.add(new SearchResponse.SearchResult(
+                "Hipercard",
+                "Disputas Hipercard",
+                "Hipercard, pertencente ao grupo Itaú, segue os processos de disputa do Itaú. O prazo para contestação é de 120 dias da data da transação.",
+                "https://www.hipercard.com.br/merchant",
+                "Disputes"
+            ));
+        }
+        
+        if (query.contains("parcelamento")) {
+            results.add(new SearchResponse.SearchResult(
+                "Hipercard",
+                "Parcelamento Hipercard",
+                "Hipercard é especializada em crédito parcelado. Oferece opções de parcelamento em até 48x para estabelecimentos parceiros, com taxas competitivas.",
+                "https://www.hipercard.com.br/merchant",
+                "Features"
+            ));
+        }
+        
+        if (query.contains("taxa")) {
+            results.add(new SearchResponse.SearchResult(
+                "Hipercard",
+                "Taxas e Tarifas",
+                "Hipercard possui uma tabela de taxas diferenciada para diferentes segmentos. Estabelecimentos de varejo pagam taxas menores que e-commerce.",
+                "https://www.hipercard.com.br/merchant",
+                "Fees"
+            ));
+        }
+        
+        return results;
+    }
+
+    private List<SearchResponse.SearchResult> searchDiscoverManual(String query, String cardBrandFilter) {
+        if (cardBrandFilter != null && !cardBrandFilter.equalsIgnoreCase("discover")) {
+            return new ArrayList<>();
+        }
+        
+        List<SearchResponse.SearchResult> results = new ArrayList<>();
+        
+        if (query.contains("chargeback")) {
+            results.add(new SearchResponse.SearchResult(
+                "Discover",
+                "Discover Chargeback Process",
+                "Discover follows the standard chargeback process with a 120-day timeframe. Discover also offers pre-arbitration for dispute resolution.",
+                "https://www.discover.com/merchant",
+                "Disputes"
+            ));
+        }
+        
+        if (query.contains("cashback")) {
+            results.add(new SearchResponse.SearchResult(
+                "Discover",
+                "Cashback Rewards",
+                "Discover is known for its cashback rewards program. Merchants should be aware of higher interchange rates for Discover cards.",
+                "https://www.discover.com/merchant",
+                "Features"
+            ));
+        }
+        
+        if (query.contains("seguran")) {
+            results.add(new SearchResponse.SearchResult(
+                "Discover",
+                "Discover Security Standards",
+                "Discover requires PCI DSS compliance and offers additional security features like Discover Protect for fraud prevention.",
+                "https://www.discover.com/merchant",
                 "Security"
             ));
         }

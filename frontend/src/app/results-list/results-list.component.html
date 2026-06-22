@@ -12,6 +12,10 @@
 
   <div *ngIf="!loading && results.length > 0" class="results-header">
     <h2>{{ results.length }} resultado(s) encontrado(s) para "{{ query }}"</h2>
+    <button mat-raised-button color="primary" (click)="exportToPDF()">
+      <mat-icon>picture_as_pdf</mat-icon>
+      Exportar PDF
+    </button>
   </div>
 
   <div *ngIf="!loading && results.length > 0" class="results-grid">
@@ -29,6 +33,7 @@
       </mat-card-header>
       <mat-card-content>
         <p class="excerpt">{{ result.excerpt }}</p>
+        <app-comments [resultId]="result.title"></app-comments>
       </mat-card-content>
       <mat-card-actions>
         <a mat-button color="primary" [href]="result.sourceUrl" target="_blank">

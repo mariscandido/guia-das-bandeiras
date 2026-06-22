@@ -1,0 +1,42 @@
+<div class="comments-container">
+  <button mat-button (click)="toggleComments()" class="toggle-button">
+    <mat-icon>comment</mat-icon>
+    Comentários ({{ comments.length }})
+  </button>
+
+  <div *ngIf="showComments" class="comments-panel">
+    <div *ngIf="loading" class="loading">
+      <mat-spinner diameter="30"></mat-spinner>
+    </div>
+
+    <div *ngIf="!loading" class="comments-list">
+      <div *ngIf="comments.length === 0" class="no-comments">
+        <p>Nenhum comentário ainda. Seja o primeiro a comentar!</p>
+      </div>
+
+      <div *ngFor="let comment of comments" class="comment-item">
+        <div class="comment-header">
+          <span class="comment-username">{{ comment.username }}</span>
+          <span class="comment-date">{{ comment.createdAt | date:'short' }}</span>
+        </div>
+        <p class="comment-content">{{ comment.content }}</p>
+        <div class="comment-actions">
+          <button mat-icon-button (click)="markAsHelpful(comment.id)" class="helpful-button">
+            <mat-icon>thumb_up</mat-icon>
+            <span>{{ comment.helpfulCount }}</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="comment-form">
+      <mat-form-field appearance="fill" class="comment-input">
+        <mat-label>Adicionar comentário</mat-label>
+        <textarea matInput [(ngModel)]="newComment" rows="2" placeholder="Escreva seu comentário..."></textarea>
+        <button mat-button matSuffix (click)="submitComment()" [disabled]="!newComment.trim()">
+          <mat-icon>send</mat-icon>
+        </button>
+      </mat-form-field>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,96 @@
+{
+  "app": {
+    "title": "Guia das Bandeiras",
+    "subtitle": "Centralize suas pesquisas sobre cartões"
+  },
+  "nav": {
+    "home": "Buscar",
+    "faq": "FAQ",
+    "glossary": "Glossário",
+    "dashboard": "Dashboard",
+    "training": "Treinamento",
+    "about": "Sobre"
+  },
+  "home": {
+    "heroTitle": "Centralize suas pesquisas sobre cartões",
+    "heroSubtitle": "Encontre informações oficiais de Visa, MasterCard e American Express em um só lugar",
+    "searchPlaceholder": "Ex: chargeback, MCC, autorização",
+    "searchHint": "Digite termos como \"chargeback\", \"MCC\", \"autorização\" ou \"fraude\"",
+    "searchButton": "Buscar",
+    "noResults": "Nenhum resultado encontrado para",
+    "noResultsHint": "Tente termos como: chargeback, MCC, autorização, fraude",
+    "resultsFound": "resultado(s) encontrado(s) para",
+    "viewManual": "Ver no manual oficial",
+    "exportPDF": "Exportar PDF"
+  },
+  "faq": {
+    "title": "Perguntas Frequentes",
+    "subtitle": "Dúvidas comuns sobre processamentos de cartões e bandeiras"
+  },
+  "glossary": {
+    "title": "Glossário",
+    "subtitle": "Termos técnicos do mundo dos cartões",
+    "searchPlaceholder": "Buscar termo...",
+    "allTerms": "Todos os termos",
+    "letter": "Letra"
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "subtitle": "Estatísticas de uso e tendências",
+    "searchesByBrand": "Buscas por Bandeira",
+    "topSearches": "Termos Mais Buscados",
+    "searchTrends": "Tendência de Buscas (Últimos 7 dias)",
+    "totalSearches": "Total de Buscas",
+    "uniqueUsers": "Usuários Únicos",
+    "avgResponseTime": "Tempo Médio de Resposta"
+  },
+  "training": {
+    "title": "Área de Treinamento",
+    "subtitle": "Aprenda e teste seus conhecimentos",
+    "quizzes": "Quizzes",
+    "flashcards": "Flashcards",
+    "startQuiz": "Iniciar Quiz",
+    "startFlashcards": "Estudar Flashcards",
+    "score": "Pontuação",
+    "correct": "Correto",
+    "incorrect": "Incorreto",
+    "nextQuestion": "Próxima Pergunta",
+    "flipCard": "Virar Cartão",
+    "showAnswer": "Mostrar Resposta"
+  },
+  "about": {
+    "title": "Sobre o Guia das Bandeiras",
+    "description": "O Guia das Bandeiras é uma plataforma que centraliza informações dos manuais públicos das principais bandeiras de cartão (Visa, MasterCard, American Express).",
+    "mission": "Nossa Missão",
+    "missionText": "Facilitar o acesso a informações oficiais sobre processamento de cartões, ajudando profissionais a encontrar respostas rápidas e confiáveis.",
+    "features": "Funcionalidades",
+    "featuresList": [
+      "Busca unificada em múltiplas bandeiras",
+      "Glossário completo de termos técnicos",
+      "FAQ com perguntas frequentes",
+      "Dashboard com estatísticas",
+      "Área de treinamento interativa",
+      "Exportação de resultados em PDF"
+    ],
+    "contact": "Contato",
+    "version": "Versão"
+  },
+  "theme": {
+    "toggle": "Alternar Tema",
+    "light": "Claro",
+    "dark": "Escuro"
+  },
+  "notifications": {
+    "title": "Notificações",
+    "markAllRead": "Marcar todas como lidas",
+    "clearAll": "Limpar todas",
+    "noNotifications": "Nenhuma notificação"
+  },
+  "chatbot": {
+    "title": "Assistente Virtual",
+    "placeholder": "Digite sua dúvida...",
+    "send": "Enviar",
+    "welcome": "Olá! Sou o assistente virtual do Guia das Bandeiras. Como posso ajudar?",
+    "typing": "Digitando..."
+  }
+}

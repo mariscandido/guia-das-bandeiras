@@ -1,0 +1,41 @@
+<div class="leaderboard-container">
+  <h2>🏆 Ranking de Usuários</h2>
+  
+  <div *ngIf="userStats" class="user-stats-card">
+    <h3>Seu Progresso</h3>
+    <div class="stats-grid">
+      <div class="stat-item">
+        <mat-icon [style.color]="getRankColor(userStats.rank)">{{ getRankIcon(userStats.rank) }}</mat-icon>
+        <span class="stat-value">{{ userStats.rankTitle }}</span>
+      </div>
+      <div class="stat-item">
+        <mat-icon>stars</mat-icon>
+        <span class="stat-value">{{ userStats.points }} pts</span>
+      </div>
+      <div class="stat-item">
+        <mat-icon>leaderboard</mat-icon>
+        <span class="stat-value">#{{ userStats.position }}</span>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="loading" class="loading">
+    <mat-spinner diameter="40"></mat-spinner>
+  </div>
+
+  <div *ngIf="!loading" class="leaderboard-list">
+    <div *ngFor="let entry of leaderboard; let i = index" class="leaderboard-entry">
+      <div class="rank-badge" [style.background-color]="getRankColor(entry.rank)">
+        {{ i + 1 }}
+      </div>
+      <div class="user-info">
+        <span class="username">{{ entry.username }}</span>
+        <span class="rank-title">{{ entry.rankTitle }}</span>
+      </div>
+      <div class="points">
+        <mat-icon>stars</mat-icon>
+        <span>{{ entry.points }}</span>
+      </div>
+    </div>
+  </div>
+</div>

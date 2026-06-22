@@ -1,0 +1,85 @@
+<div class="about-container">
+  <div class="about-header">
+    <h1>Sobre o Guia das Bandeiras</h1>
+    <p>Versão {{ version }}</p>
+  </div>
+
+  <div class="about-section">
+    <mat-card class="about-card">
+      <mat-card-content>
+        <h2>Nossa Missão</h2>
+        <p class="mission-text">
+          O Guia das Bandeiras é uma plataforma que centraliza informações dos manuais públicos das principais bandeiras de cartão (Visa, MasterCard, American Express). Nosso objetivo é facilitar o acesso a informações oficiais sobre processamento de cartões, ajudando profissionais a encontrar respostas rápidas e confiáveis.
+        </p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <div class="features-section">
+    <h2>Funcionalidades</h2>
+    <div class="features-grid">
+      <mat-card *ngFor="let feature of features" class="feature-card">
+        <mat-card-content>
+          <div class="feature-icon">
+            <mat-icon>{{ feature.icon }}</mat-icon>
+          </div>
+          <h3>{{ feature.title }}</h3>
+          <p>{{ feature.description }}</p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+
+  <div class="tech-section">
+    <h2>Tecnologias</h2>
+    <div class="tech-grid">
+      <mat-card class="tech-card">
+        <mat-card-content>
+          <h3>Frontend</h3>
+          <ul>
+            <li>Angular 17</li>
+            <li>Angular Material</li>
+            <li>Chart.js</li>
+            <li>TypeScript</li>
+          </ul>
+        </mat-card-content>
+      </mat-card>
+
+      <mat-card class="tech-card">
+        <mat-card-content>
+          <h3>Backend</h3>
+          <ul>
+            <li>Spring Boot 3</li>
+            <li>Java 17</li>
+            <li>Caffeine Cache</li>
+            <li>Maven</li>
+          </ul>
+        </mat-card-content>
+      </mat-card>
+
+      <mat-card class="tech-card">
+        <mat-card-content>
+          <h3>Infraestrutura</h3>
+          <ul>
+            <li>Docker</li>
+            <li>Docker Compose</li>
+            <li>Nginx</li>
+          </ul>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+
+  <div class="contact-section">
+    <mat-card class="contact-card">
+      <mat-card-content>
+        <h2>Contato</h2>
+        <p>Este é um projeto open source desenvolvido para fins educacionais e demonstrativos.</p>
+        <p class="contact-info">
+          <mat-icon>code</mat-icon>
+          <span>Disponível no GitHub</span>
+        </p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

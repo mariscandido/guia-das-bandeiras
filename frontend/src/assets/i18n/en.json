@@ -1,0 +1,96 @@
+{
+  "app": {
+    "title": "Card Brands Guide",
+    "subtitle": "Centralize your card payment research"
+  },
+  "nav": {
+    "home": "Search",
+    "faq": "FAQ",
+    "glossary": "Glossary",
+    "dashboard": "Dashboard",
+    "training": "Training",
+    "about": "About"
+  },
+  "home": {
+    "heroTitle": "Centralize Your Card Payment Research",
+    "heroSubtitle": "Find official information from Visa, MasterCard, and American Express in one place",
+    "searchPlaceholder": "Ex: chargeback, MCC, authorization",
+    "searchHint": "Type terms like \"chargeback\", \"MCC\", \"authorization\" or \"fraud\"",
+    "searchButton": "Search",
+    "noResults": "No results found for",
+    "noResultsHint": "Try terms like: chargeback, MCC, authorization, fraud",
+    "resultsFound": "result(s) found for",
+    "viewManual": "View in Official Manual",
+    "exportPDF": "Export PDF"
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "subtitle": "Common questions about card processing and brands"
+  },
+  "glossary": {
+    "title": "Glossary",
+    "subtitle": "Technical terms from the card payment world",
+    "searchPlaceholder": "Search term...",
+    "allTerms": "All terms",
+    "letter": "Letter"
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "subtitle": "Usage statistics and trends",
+    "searchesByBrand": "Searches by Brand",
+    "topSearches": "Top Search Terms",
+    "searchTrends": "Search Trends (Last 7 days)",
+    "totalSearches": "Total Searches",
+    "uniqueUsers": "Unique Users",
+    "avgResponseTime": "Avg Response Time"
+  },
+  "training": {
+    "title": "Training Area",
+    "subtitle": "Learn and test your knowledge",
+    "quizzes": "Quizzes",
+    "flashcards": "Flashcards",
+    "startQuiz": "Start Quiz",
+    "startFlashcards": "Study Flashcards",
+    "score": "Score",
+    "correct": "Correct",
+    "incorrect": "Incorrect",
+    "nextQuestion": "Next Question",
+    "flipCard": "Flip Card",
+    "showAnswer": "Show Answer"
+  },
+  "about": {
+    "title": "About Card Brands Guide",
+    "description": "Card Brands Guide is a platform that centralizes information from public manuals of major card brands (Visa, MasterCard, American Express).",
+    "mission": "Our Mission",
+    "missionText": "Facilitate access to official information about card processing, helping professionals find quick and reliable answers.",
+    "features": "Features",
+    "featuresList": [
+      "Unified search across multiple brands",
+      "Complete glossary of technical terms",
+      "FAQ with common questions",
+      "Dashboard with statistics",
+      "Interactive training area",
+      "PDF export of results"
+    ],
+    "contact": "Contact",
+    "version": "Version"
+  },
+  "theme": {
+    "toggle": "Toggle Theme",
+    "light": "Light",
+    "dark": "Dark"
+  },
+  "notifications": {
+    "title": "Notifications",
+    "markAllRead": "Mark all as read",
+    "clearAll": "Clear all",
+    "noNotifications": "No notifications"
+  },
+  "chatbot": {
+    "title": "Virtual Assistant",
+    "placeholder": "Type your question...",
+    "send": "Send",
+    "welcome": "Hello! I'm the Card Brands Guide virtual assistant. How can I help?",
+    "typing": "Typing..."
+  }
+}
