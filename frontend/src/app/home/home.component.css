@@ -1,0 +1,20 @@
+.home-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.hero-section {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.hero-title {
+  color: #333;
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.hero-subtitle {
+  color: #666;
+  font-size: 1.1rem;
+}

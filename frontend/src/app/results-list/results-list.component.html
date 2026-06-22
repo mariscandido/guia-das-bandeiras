@@ -1,0 +1,41 @@
+<div class="results-container">
+  <div *ngIf="loading" class="loading-container">
+    <mat-spinner diameter="50"></mat-spinner>
+    <p>Buscando informações...</p>
+  </div>
+
+  <div *ngIf="!loading && results.length === 0 && query" class="no-results">
+    <mat-icon>search_off</mat-icon>
+    <p>Nenhum resultado encontrado para "{{ query }}"</p>
+    <p class="hint">Tente termos como: chargeback, MCC, autorização, fraude</p>
+  </div>
+
+  <div *ngIf="!loading && results.length > 0" class="results-header">
+    <h2>{{ results.length }} resultado(s) encontrado(s) para "{{ query }}"</h2>
+  </div>
+
+  <div *ngIf="!loading && results.length > 0" class="results-grid">
+    <mat-card *ngFor="let result of results" class="result-card">
+      <mat-card-header>
+        <mat-card-title-group>
+          <mat-card-title>{{ result.title }}</mat-card-title>
+          <mat-card-subtitle>
+            <span class="brand-badge" [style.background-color]="getBrandColor(result.cardBrand)">
+              {{ result.cardBrand }}
+            </span>
+            <span class="section">{{ result.section }}</span>
+          </mat-card-subtitle>
+        </mat-card-title-group>
+      </mat-card-header>
+      <mat-card-content>
+        <p class="excerpt">{{ result.excerpt }}</p>
+      </mat-card-content>
+      <mat-card-actions>
+        <a mat-button color="primary" [href]="result.sourceUrl" target="_blank">
+          Ver no manual oficial
+          <mat-icon>open_in_new</mat-icon>
+        </a>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>

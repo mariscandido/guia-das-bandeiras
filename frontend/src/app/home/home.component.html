@@ -1,0 +1,14 @@
+<div class="home-container">
+  <div class="hero-section">
+    <h2 class="hero-title">Centralize suas pesquisas sobre cartões</h2>
+    <p class="hero-subtitle">Encontre informações oficiais de Visa, MasterCard e American Express em um só lugar</p>
+  </div>
+
+  <app-search-bar (search)="onSearch($event)"></app-search-bar>
+
+  <app-results-list 
+    [results]="results" 
+    [loading]="loading"
+    [query]="query">
+  </app-results-list>
+</div>

@@ -1,0 +1,18 @@
+<div class="search-bar-container">
+  <div class="search-input-wrapper">
+    <mat-form-field appearance="fill" class="search-field">
+      <mat-label>Buscar nos manuais das bandeiras</mat-label>
+      <input matInput 
+             [(ngModel)]="query" 
+             (keyup.enter)="onSearch()" 
+             placeholder="Ex: chargeback, MCC, autorização">
+      <button mat-icon-button matSuffix (click)="onSearch()" [disabled]="!query.trim()">
+        <mat-icon>search</mat-icon>
+      </button>
+    </mat-form-field>
+    <button mat-raised-button color="primary" (click)="onSearch()" [disabled]="!query.trim()">
+      Buscar
+    </button>
+  </div>
+  <p class="search-hint">Digite termos como "chargeback", "MCC", "autorização" ou "fraude"</p>
+</div>
